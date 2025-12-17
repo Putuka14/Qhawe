@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qhawe Protection | Stationery Supply</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    /* Base Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        scroll-behavior: smooth;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Header */
+    header {
+        position: sticky;
+        top: 0;
+        background-color: #010c16;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+        background-color: #01060b;
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1.logo {
+        margin: 0;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: #fff;
+        margin: 0 15px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    nav a:hover, nav a.nav-btn:hover {
+        background-color: #004080;
+        color: #fff;
+    }
+
+    nav a.nav-btn {
+        background-color: #004080;
+        font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        background: linear-gradient(rgba(1, 12, 22, 0.6), rgba(1, 12, 22, 0.6)), url('https://source.unsplash.com/1600x600/?office,stationery') center/cover no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease forwards;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero-buttons a {
+        display: inline-block;
+        margin: 5px 10px;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .hero-buttons a.btn {
+        background-color: #004080;
+        color: #fff;
+    }
+
+    .hero-buttons a.btn:hover {
+        background-color: #0066cc;
+    }
+
+    .hero-buttons a.outline {
+        border: 2px solid #fff;
+        color: #fff;
+    }
+
+    .hero-buttons a.outline:hover {
+        background-color: #fff;
+        color: #004080;
+    }
+
+    .tags {
+        margin-top: 20px;
+    }
+
+    .tag {
+        display: inline-block;
+        background-color: #004080;
+        color: #fff;
+        padding: 6px 12px;
+        margin: 5px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        transition: 0.3s;
+        cursor: default;
+    }
+
+    .tag:hover {
+        background-color: #0066cc;
+        transform: scale(1.1);
+    }
+
+    /* Sections */
+    .section {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .section h3 {
+        font-size: 2rem;
+        color: #004080;
+        margin-bottom: 40px;
+        font-weight: 600;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .card i {
+        font-size: 2rem;
+        color: #004080;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Footer */
+    footer {
+        background-color: #01060b;
+        color: #fff;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25D366;
+        color: #fff;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 28px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        animation: pulse 2s infinite;
+        z-index: 1000;
+        transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.2);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-30px);}
+        100% { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px);}
+        100% { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+    }
+</style>
+</head>
+<body>
+<header id="header">
+  <h1 class="logo">Qhawe Protection</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="experience.html">Experience</a>
+    <a href="request.html" class="nav-btn">Request Quote</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Reliable Supply & Delivery of Stationery Across South Africa</h2>
+  <p>Quality stationery solutions for government departments, private companies, small businesses and the general public.</p>
+  <div class="hero-buttons">
+    <a href="quote.html" class="btn">Request a Quote</a>
+    <a href="contact.html" class="btn outline">Contact Us</a>
+    <div class="tags">
+      <span class="tag">Nationwide Delivery</span>
+      <span class="tag">Government Approved</span>
+      <span class="tag">Bulk Orders</span>
+      <span class="tag">Fast Turnaround</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Who We Serve</h3>
+  <div class="grid cards">
+    <div class="card"><i class="fa-solid fa-building-columns"></i>Government Departments</div>
+    <div class="card"><i class="fa-solid fa-briefcase"></i>Private Companies</div>
+    <div class="card"><i class="fa-solid fa-shop"></i>Small Businesses</div>
+    <div class="card"><i class="fa-solid fa-users"></i>General Public</div>
+  </div>
+</section>
+
+<section class="section alt">
+  <h3>Why Choose Qhawe Protection</h3>
+  <div class="grid cards">
+    <div class="card">🚚 Nationwide Delivery</div>
+    <div class="card">🤝 Professional Service</div>
+    <div class="card">📝 Quality Products</div>
+    <div class="card">💰 Competitive Pricing</div>
+    <div class="card">📦 Custom Orders</div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Qhawe Protection</p>
+  <p>Supply & Delivery of Stationery | Nationwide Service</p>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/27XXXXXXXXX" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  window.addEventListener("scroll", () => {
+    document.getElementById("header").classList.toggle("scrolled", window.scrollY > 50);
+  });
+</script>
+</body>
+</html>
